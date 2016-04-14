@@ -13,6 +13,12 @@
 ### Enter container
 	docker exec -it ${nameOrID} bash
 	
+### Inspect container
+	docker inspect ${nameOrID}
+	
+### Container history
+	docker history ${nameOrID}
+	
 ### Check logs
 	docker logs ${ID} 
 
@@ -22,7 +28,7 @@
 
 	
 ### Wildfly
-	docker run -d -p 8080:8080 --name INSTANCE_NAME josueeduardo/wildfly /opt/wildfly/bin/standalone.sh -b 0.0.0.0 -c standalone.xml
-	docker run -d -p 8080:8080 --name INSTANCE_NAME josueeduardo/wildfly /opt/wildfly/bin/standalone.sh -b 0.0.0.0 -c standalone-full-ha.xml
+	docker run -d -p 8080:8080 --name INSTANCE_NAME josueeduardo/wildfly
+	docker run -d -p 8080:8080 -p 9990:9990 --name INSTANCE_NAME josueeduardo/wildfly -c standalone-ha.xml -bmanagement 0.0.0.0
 
       
