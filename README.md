@@ -13,6 +13,9 @@
 ### Enter container
 	docker exec -it ${nameOrID} bash
 	
+### Container stats
+	docker stats ${nameOrID}
+	
 ### Inspect container
 	docker inspect ${nameOrID}
 	
@@ -32,3 +35,10 @@
 	docker run -d -p 8080:8080 -p 9990:9990 --name INSTANCE_NAME josueeduardo/wildfly -c standalone-ha.xml -bmanagement 0.0.0.0
 
       
+### Proxy config (docker build)
+*Since the build is run from another container, the value should be set manually, without variables*
+	ENV http_proxy=THE_PROXY
+	ENV https_proxy=THE_PROXY
+
+	docker pull imagename --
+	
