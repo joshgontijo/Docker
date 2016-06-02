@@ -17,5 +17,5 @@ ADD configuration/* $WILDFLY_HOME/standalone/configuration/
 
 RUN chmod a+x $WILDFLY_HOME/bin/standalone.sh
 
-ENTRYPOINT ["/opt/wildffly/bin/standalone.sh", "-b", "0.0.0.0"]
+ENTRYPOINT ["/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
 EXPOSE 8080 9990
